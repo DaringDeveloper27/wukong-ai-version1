@@ -166,7 +166,7 @@ with st.sidebar:
     # Memory manager
     st.divider()
 
-    with st.expander("🧠 Long-term memory"):
+    with st.expander("Long-term memory"):
         st.caption(
             "Save facts Wukong can use across different chats."
         )
