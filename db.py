@@ -70,6 +70,15 @@ def list_conversations():
         return [dict(row) for row in rows]
 
 
+def delete_conversation(conversation_id):
+    """Delete a conversation and all its messages, but not long-term memories."""
+    with get_connection() as conn:
+        conn.execute(
+            "DELETE FROM conversations WHERE id = ?",
+            (conversation_id,),
+        )
+
+
 def get_messages(conversation_id):
     with get_connection() as conn:
         rows = conn.execute("""
